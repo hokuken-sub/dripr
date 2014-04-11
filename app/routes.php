@@ -15,3 +15,8 @@ Route::get('/', function()
 {
 	return View::make('hello');
 });
+
+Route::get('/edit', function()
+{
+    return View::make('edit');
+});
