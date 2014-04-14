@@ -15,7 +15,7 @@ angular.module('DriprApp', [
         './bower_components/bootstrap/dist/css/bootstrap.css'
       ]
     })
-    .when('/medit/:id', {
+    .when('/edit/:id', {
       templateUrl: 'app/views/edit.html',
       controller: 'EditCtrl',
       css: [
