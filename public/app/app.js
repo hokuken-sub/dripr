@@ -9,8 +9,8 @@ angular.module('DriprApp', [
 .config(['$routeProvider', function ($routeProvider) {
   $routeProvider
     .when('/', {
-      templateUrl: 'app/views/dripr.html',
-      controller: 'DriprCtrl',
+      templateUrl: 'app/views/main.html',
+      controller: 'MainCtrl',
       css: [
         './bower_components/bootstrap/dist/css/bootstrap.css'
       ]
