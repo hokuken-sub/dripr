@@ -12,7 +12,8 @@ angular.module('DriprApp', [
       templateUrl: 'app/views/intro.html',
       controller: 'IntroCtrl',
       css: [
-        './bower_components/bootstrap/dist/css/bootstrap.css'
+        './bower_components/bootstrap/dist/css/bootstrap.css',
+        'assets/stylesheets/intro.css'
       ]
     })
     .when('/edit/:id', {
