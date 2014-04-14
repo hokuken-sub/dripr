@@ -16,9 +16,12 @@ Route::get('/', function()
 	return View::make('hello');
 });
 
-Route::get('/edit', function()
+/*
+ * Add Route group for API Access
+ */
+Route::group(array('prefix' => 'api'), function()
 {
-    return View::make('edit');
+    Route::resource('theme', 'ThemeController');
 });
 
 Route::get('/oauth', function()
