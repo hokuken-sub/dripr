@@ -19,9 +19,12 @@ Route::get('/', function()
 /*
  * Add Route group for API Access
  */
-Route::group(array('prefix' => 'api'), function()
+Route::group(array('prefix' => 'api/'), function()
 {
-    Route::resource('theme', 'ThemeController');
+    Route::resource('theme', 'ThemesController',
+        array(
+            'only' => array('store', 'show')
+        ));
 });
 
 Route::get('/oauth', function()
@@ -88,19 +91,9 @@ Route::get('/oauth', function()
     return View::make('oauth_success');
 });
 
-Route::get('/test', function()
+App::missing(function($exception)
 {
-    $client = new Tumblr\API\Client(
-        $_ENV['TUMBLR_API_CONSUMER_KEY'],
-        $_ENV['TUMBLR_API_SECRET_KEY'],
-        Session::get('Tumblr_oauth_token'),
-        Session::get('Tumblr_oauth_token_secret')
-    );
-
-    // Change the base url
-//    $requestHandler = $client->getRequestHandler();
-//    $requestHandler->setBaseUrl('https://www.tumblr.com/');
-
-    $info = $client->getUserInfo();
-    dd( "\ncongrats " . $info->user->name . "!\n");
+    App::abort(404);
+    // !TODO: custom 404 page
+    // return Response::view('errors.missing', array(), 404);
 });
