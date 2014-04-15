@@ -13,7 +13,6 @@
     <!-- endbuild -->
     <!-- build:css({.tmp,app}) styles/main.css -->
     <!-- endbuild -->
-
   </head>
   <body>
 
@@ -28,14 +27,19 @@
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
-
     <!-- endbower -->
     <!-- endbuild -->
 
+    <script src="assets/redactor/redactor.min.js"></script>
+
+
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="app/app.js"></script>
-    <script src="app/controllers/main.js"></script>
+    <script src="app/controllers/intro.js"></script>
+    <script src="app/controllers/edit.js"></script>
     <!-- endbuild -->
 
-</body>
+
+
+  </body>
 </html>

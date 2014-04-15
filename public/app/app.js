@@ -16,25 +16,13 @@ angular.module('DriprApp', [
         'assets/stylesheets/intro.css'
       ]
     })
-    .when('/edit/:id', {
+    .when('/edit', {
       templateUrl: 'app/views/edit.html',
       controller: 'EditCtrl',
       css: [
-        'styles/main.css'
-      ]
-    })
-    .when('/editor/:viewname', {
-      templateUrl: 'app/views/editor2.html',
-      controller: 'EditorCtrl',
-      css: [
-         'styles/editor.css'
-      ]
-    })
-    .when('/make', {
-      templateUrl: 'app/views/make.html',
-      controller: 'EditorCtrl',
-      css: [
-        './styles/editor.css',
+        './bower_components/bootstrap/dist/css/bootstrap.css',
+        'assets/stylesheets/edit.css',
+        'theme/landing/style.css'
       ]
     })
     .otherwise({
@@ -50,7 +38,6 @@ angular.module('DriprApp', [
 
                 elem.append($compile(html)(scope));
                 scope.routeStyles = {};
-
                 $rootScope.$on('$routeChangeStart', function (e, next, current) {
                     if(current && current.$$route && current.$$route.css){
                         if(!Array.isArray(current.$$route.css)){
